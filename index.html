@@ -1,0 +1,486 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- SEO: title / description -->
+  <title>西神中央の花屋｜花のサブスク（定期便） ハナ活メンバー｜Tokihana</title>
+  <meta name="description" content="Tokihana（トキハナ）西神中央（神戸市西区・かすがプラザ1F）の花のサブスク（花の定期便のような定額プラン）。月額2,000円/3,000円で1日1回、店頭受け取りOK（先着100名）。初回は店頭で本人確認のうえ開始。クレジットカード自動引き落とし。" />
+
+  <!-- SNS preview（任意） -->
+  <meta property="og:title" content="西神中央の花屋｜花のサブスク（定期便） ハナ活メンバー｜Tokihana">
+  <meta property="og:description" content="花のサブスク（定期便のような定額プラン）。月額2,000円/3,000円で1日1回、店頭受け取りOK（先着100名）。初回は店頭で本人確認のうえ開始。">
+  <meta property="og:type" content="website">
+
+  <style>
+    :root{
+      --bg:#fff7fb;
+      --text:#2b2b2b;
+      --muted:#6d5c64;
+      --line:#f1d7e4;
+      --accent:#e56a9a;
+      --accent2:#ffe2ee;
+      --price:#d64b7b;
+      --shadow:0 12px 34px rgba(0,0,0,.07);
+      --radius:22px;
+    }
+
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:"Hiragino Maru Gothic ProN","Hiragino Sans","Noto Sans JP",system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+      color:var(--text);
+      line-height:1.7;
+      background: radial-gradient(1200px 700px at 50% 0%, #ffffff 0%, var(--bg) 65%);
+    }
+    a{color:inherit}
+    .container{max-width:1080px;margin:0 auto;padding:0 20px}
+
+    .topbar{
+      position:sticky;top:0;z-index:50;
+      background: rgba(255,255,255,.90);
+      backdrop-filter:saturate(180%) blur(12px);
+      border-bottom:1px solid var(--line)
+    }
+    .topbar .inner{display:flex;gap:14px;align-items:center;justify-content:space-between;padding:12px 0}
+    .brand{display:flex;align-items:center;gap:10px;text-decoration:none;font-weight:900;letter-spacing:.02em}
+    .dot{width:10px;height:10px;border-radius:999px;background:var(--accent)}
+    .nav{display:flex;gap:14px;align-items:center;font-size:14px;color:var(--muted)}
+    .nav a{text-decoration:none;padding:8px 10px;border-radius:999px}
+    .nav a:hover{background:var(--accent2);color:var(--text)}
+    .cta{display:flex;gap:10px;align-items:center}
+
+    .btn{
+      display:inline-flex;align-items:center;justify-content:center;
+      padding:10px 14px;border-radius:999px;border:1px solid var(--line);
+      background:#fff;text-decoration:none;font-weight:800;font-size:14px;
+      transition:filter .15s ease,background .15s ease;white-space:nowrap
+    }
+    .btn:hover{background:#fff5fa}
+    .btn.primary{
+      background: linear-gradient(180deg, #ff87b8 0%, var(--accent) 100%);
+      color:#fff;border-color:transparent;
+      box-shadow: 0 10px 22px rgba(229,106,154,.24);
+    }
+    .btn.primary:hover{filter:brightness(.98)}
+
+    .hero{
+      background: linear-gradient(180deg, var(--accent2), #ffffff 62%);
+      border-bottom:1px solid var(--line)
+    }
+    .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:26px;padding:44px 0 32px;align-items:center}
+    @media (max-width:880px){.hero-grid{grid-template-columns:1fr;padding:34px 0 18px}.nav{display:none}}
+
+    .hero-catch{
+      font-size:22px;letter-spacing:.02em;margin:0 0 10px;font-weight:900;
+    }
+    @media (max-width:480px){.hero-catch{font-size:18px}}
+
+    .kicker{
+      display:inline-flex;gap:10px;align-items:center;
+      padding:8px 12px;border-radius:999px;background:#fff;
+      border:1px solid var(--line);font-size:13px;color:var(--muted);
+      box-shadow:0 6px 18px rgba(0,0,0,.04)
+    }
+    .kicker b{color:var(--accent)}
+
+    h1{font-size:44px;line-height:1.18;margin:14px 0 10px;letter-spacing:-.02em}
+    @media (max-width:480px){h1{font-size:34px}}
+    .lead{font-size:16px;color:var(--muted);margin:0 0 18px}
+
+    .hero-ctas{display:flex;gap:10px;flex-wrap:wrap;margin:12px 0 8px}
+    .chips{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+    .chip{
+      font-size:12px;color:#7a2f4b;
+      background: rgba(229,106,154,.10);
+      border: 1px solid rgba(229,106,154,.20);
+      padding:6px 10px;border-radius:999px
+    }
+
+    .card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow)}
+    .poster{padding:16px}
+    .poster img{
+      width:100%;height:260px;object-fit:cover;border-radius:14px;
+      border:1px solid rgba(229,106,154,.20);display:block
+    }
+    .poster p{margin:12px 0 0;color:var(--muted);font-size:13px}
+
+    .section{padding:46px 0}
+    .section h2{font-size:26px;margin:0 0 10px;letter-spacing:-.01em}
+    .section p{margin:0 0 18px;color:var(--muted)}
+
+    .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+    .grid2{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+    @media (max-width:880px){.grid3{grid-template-columns:1fr}.grid2{grid-template-columns:1fr}}
+
+    .mini{padding:18px 18px 16px;border-radius:var(--radius);border:1px solid var(--line);background:#fff}
+    .mini b{display:block;margin-bottom:6px}
+    .mini span{color:var(--muted);font-size:14px}
+
+    .highlight{
+      background: linear-gradient(180deg, rgba(229,106,154,.10), rgba(229,106,154,0));
+      border:1px solid rgba(229,106,154,.18);
+      border-radius:var(--radius);
+      padding:18px
+    }
+    .highlight b{color:var(--accent)}
+
+    .how{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+    @media (max-width:880px){.how{grid-template-columns:1fr}}
+    .step{padding:18px;border-radius:var(--radius);border:1px solid var(--line);background:#fff;display:flex;gap:12px}
+    .num{
+      width:34px;height:34px;border-radius:999px;
+      background: linear-gradient(180deg, #ff87b8 0%, var(--accent) 100%);
+      color:#fff;display:flex;align-items:center;justify-content:center;font-weight:900;flex:0 0 auto
+    }
+    .step h3{margin:0 0 6px;font-size:16px}
+    .step p{margin:0;font-size:14px;color:var(--muted)}
+
+    .menu{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+    @media (max-width:880px){.menu{grid-template-columns:1fr}}
+    .menu .item{padding:18px;border-radius:var(--radius);border:1px solid var(--line);background:#fff}
+    .badge{display:inline-flex;align-items:center;gap:8px;font-weight:900;color:var(--accent);margin-bottom:6px}
+    .badge .circle{
+      width:28px;height:28px;border-radius:999px;
+      background: rgba(229,106,154,.12);
+      display:flex;align-items:center;justify-content:center;
+      border:1px solid rgba(229,106,154,.22);color:var(--accent)
+    }
+    .item h3{margin:0 0 8px;font-size:16px}
+    .item p{margin:0;color:var(--muted);font-size:14px}
+
+    .price{padding:22px}
+    .price h3{margin:0 0 8px;font-size:18px}
+    .yen{
+      font-size:34px;font-weight:900;letter-spacing:-.02em;margin:6px 0 8px;
+      color:var(--price)
+    }
+    .ul{margin:10px 0 16px;padding-left:18px;color:var(--muted);font-size:14px}
+
+    .note{font-size:12px;color:var(--muted);background:#fff;border:1px solid var(--line);padding:12px 14px;border-radius:14px}
+    details{border:1px solid var(--line);border-radius:14px;padding:14px 14px 12px;background:#fff}
+    details + details{margin-top:10px}
+    summary{cursor:pointer;font-weight:900;list-style:none}
+    summary::-webkit-details-marker{display:none}
+
+    .split{display:grid;grid-template-columns:1.05fr .95fr;gap:14px}
+    @media (max-width:880px){.split{grid-template-columns:1fr}}
+    .mapbox{border-radius:var(--radius);border:1px solid var(--line);overflow:hidden;min-height:280px;background:#fff}
+    .mapbox iframe{width:100%;height:100%;border:0;min-height:280px;display:block}
+
+    .footer{border-top:1px solid var(--line);padding:28px 0 40px;color:var(--muted);font-size:13px;background:#fff}
+  </style>
+</head>
+
+<body>
+  <div class="topbar">
+    <div class="container">
+      <div class="inner">
+        <a class="brand" href="#top" aria-label="ハナ活メンバー トップへ"><span class="dot"></span><span>ハナ活メンバー</span></a>
+        <nav class="nav" aria-label="ページ内ナビゲーション">
+          <a href="#about">仕組み</a>
+          <a href="#menu">メニュー</a>
+          <a href="#price">料金</a>
+          <a href="#line">事前登録</a>
+          <a href="#faq">FAQ</a>
+          <a href="#access">アクセス</a>
+        </nav>
+        <div class="cta">
+          <a class="btn" href="#price">料金を見る</a>
+          <a class="btn primary" href="#line">LINEで事前登録</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <main id="top">
+    <header class="hero">
+      <div class="container">
+        <div class="hero-grid">
+          <div>
+            <p class="hero-catch">いつもの日を、ハナのある日にしませんか？</p>
+            <div class="kicker"><b>先着100名</b>｜創部メンバー募集｜カード自動引き落とし</div>
+
+            <h1>日常に花を。<br>毎日選べる、花の習慣。</h1>
+
+            <p class="lead">
+              ハナ活メンバーは、<b>花のサブスク（花の定期便のような定額プラン）</b>として、ハナのある日常をつくるメンバー制度。<br>
+              <b>1日1回</b>、店頭で本日のメニューからひとつ選んで<b>店頭受け取りのみ</b>できます。
+            </p>
+
+            <div class="hero-ctas">
+              <a class="btn primary" href="#line">LINEで事前登録（初回は店頭で開始）</a>
+              <a class="btn" href="#about">仕組みを1分で見る</a>
+            </div>
+
+            <div class="chips" aria-label="特徴">
+              <span class="chip">毎日1回OK（当日分のみ）</span>
+              <span class="chip">A〜Dから選べる</span>
+              <span class="chip">3,000円：厳選バラあり</span>
+              <span class="chip">100名限定</span>
+            </div>
+
+            <div style="height:12px"></div>
+            <div class="note">
+              ※ハナ活サイズです（ギフト用途ではありません）ラッピング＋100円で可／内容は季節・入荷状況により変わります／混雑時は数量を調整する場合があります／契約者のみ受け取り可能
+            </div>
+          </div>
+
+          <div class="card poster">
+            <img src="tokihana_shop.jpg" alt="Tokihana 店頭写真" />
+            <p>店頭のみでの受け取り→そのまま飾れるサイズ感。<br>ハナのある暮らしを、気軽に続けられます。</p>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <section class="section" id="about">
+      <div class="container">
+        <h2>ハナ活メンバーってなに？</h2>
+        <p>
+          ハナ活メンバーは、<b>ハナのある日常</b>をつくるためのメンバー制度です。<br>
+          暮らしの中に自然と花がある状態を、無理なく続けられる仕組みにしました（<b>花の定額プラン</b>として続けやすい設計）。
+        </p>
+
+        <div class="grid3">
+          <div class="mini"><b>ハナが“習慣”になる</b><span>小さくてもいい。毎日少しずつ、花がある暮らしが当たり前になります。</span></div>
+          <div class="mini"><b>選べるから、続けやすい</b><span>本日のメンバー用メニュー（A〜D）から1つ。気分に合わせて選べます。</span></div>
+          <div class="mini"><b>季節を感じる暮らしへ</b><span>色・香り・グリーンの変化で、いつもの空気がやさしく整います。</span></div>
+        </div>
+
+        <div style="height:12px"></div>
+        <div class="highlight">
+          <b>ハナ活メンバー特典</b><br>
+          メンバー限定で、<b>お手軽価格のイベント</b>を開催します。
+        </div>
+
+        <div style="height:14px"></div>
+        <div class="highlight"><b>決済はクレジットカードの自動引き落とし。</b>毎月自動更新で、手続きもスムーズです。</div>
+      </div>
+    </section>
+
+    <section class="section" style="background:#fff; border-top:1px solid var(--line); border-bottom:1px solid var(--line);">
+      <div class="container">
+        <h2>参加のしかた（3ステップ）</h2>
+        <p>まずはLINEで事前登録。初回は店頭で確認してからスタートします。</p>
+
+        <div class="how">
+          <div class="step"><div class="num">1</div><div><h3>公式LINEで事前登録</h3><p>LINEを追加して、事前登録（仮登録）を進めます。</p></div></div>
+          <div class="step"><div class="num">2</div><div><h3>初回は店頭で開始（本人確認）</h3><p>顔写真登録と受け取りルールのご案内後、プラン確定＆カード登録を行います。</p></div></div>
+          <div class="step"><div class="num">3</div><div><h3>店頭で受け取り</h3><p>「ハナ活メンバーです」でOK。本日のメニューから1つ選べます（1日1回／当日分のみ）。</p></div></div>
+        </div>
+
+        <div style="height:14px"></div>
+        <div class="note">
+          ※お渡しは<b>店頭のみ</b>です（配送なし）／本人確認ができない場合はお渡しできません
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="menu">
+      <div class="container">
+        <h2>本日のメンバー用メニュー（A〜D）</h2>
+        <p>内容は季節と入荷で変わります。ハナ活サイズだから、毎日続けやすい。</p>
+
+        <div class="menu">
+          <div class="item"><div class="badge"><span class="circle">A</span>一輪＋グリーン</div><h3>上質に、毎日飾れる</h3><p>メイン1輪＋グリーン少し。シンプルなのに気分が上がる。</p></div>
+          <div class="item"><div class="badge"><span class="circle">B</span>季節のミックス3本束</div><h3>“ちょい飾り”の定番</h3><p>色合わせで可愛く。忙しくても飾りやすいサイズ。</p></div>
+          <div class="item"><div class="badge"><span class="circle">C</span>グリーン束</div><h3>暮らしが整う</h3><p>ユーカリなど日持ち素材中心。花瓶がなくても飾れる日も。</p></div>
+          <div class="item"><div class="badge"><span class="circle">D</span>週替わり（枝もの／実もの／香り）</div><h3>飽きない“特別枠”</h3><p>枝もの1本、実もの、ハーブなど。季節の空気を持ち帰る。</p></div>
+        </div>
+
+        <div style="height:14px"></div>
+        <div class="note">受け取りルール：1日1回／当日分のみ（取り置き不可）／ハナ活サイズ（ギフト用途ではありません）</div>
+      </div>
+    </section>
+
+    <section class="section" id="price" style="background:#fff; border-top:1px solid var(--line); border-bottom:1px solid var(--line);">
+      <div class="container">
+        <h2>料金プラン（カード自動引き落とし）</h2>
+        <p>先着100名。創部メンバーは在籍中、同条件で継続できます（募集条件は今後変更する場合があります）。</p>
+
+        <div class="grid2">
+          <div class="card price">
+            <h3>ベーシック（ハナ活）</h3>
+            <div class="yen">月額 2,000円</div>
+            <ul class="ul">
+              <li>1日1回 受け取りOK</li>
+              <li>A〜Dから毎日1つ選べる</li>
+              <li>当日分のみ（取り置き不可）</li>
+              <li>クレジットカード自動引き落とし（毎月自動更新）</li>
+            </ul>
+            <a class="btn primary" href="#line">LINEで事前登録（初回は店頭で開始）</a>
+            <div style="height:10px"></div>
+            <div class="note">※お渡しは店頭のみです。初回はご来店いただき、本人確認（顔写真）とルール案内後にスタートします。</div>
+          </div>
+
+          <div class="card price">
+            <h3>厳選バラあり（ハナ活＋ローズ）</h3>
+            <div class="yen">月額 3,000円</div>
+            <ul class="ul">
+              <li>1日1回 受け取りOK</li>
+              <li>A〜Dに加えて「厳選バラ」枠が選べる</li>
+              <li>当日分のみ（取り置き不可）</li>
+              <li>クレジットカード自動引き落とし（毎月自動更新）</li>
+            </ul>
+            <a class="btn primary" href="#line">LINEで事前登録（初回は店頭で開始）</a>
+            <div style="height:10px"></div>
+            <div class="note">※「厳選バラ」は月8〜10回など上限を設ける場合は、店頭案内で明記します（運用に合わせて調整）。</div>
+          </div>
+        </div>
+
+        <div style="height:14px"></div>
+        <div class="note">解約：<b>毎月10日まで</b>に申請してください（10日を過ぎた場合は翌月分の引き落としが発生します）</div>
+      </div>
+    </section>
+
+    <section class="section" id="line" style="background:#fff;">
+      <div class="container">
+        <h2>事前登録（公式LINE）</h2>
+        <p>
+          ハナ活メンバーは、<b>店頭でのお渡し専用</b>のメンバー制度です。<br>
+          はじめての方は、まず公式LINEに登録していただき、<b>初回はご来店のうえ本人確認（顔写真）とルール案内後にスタート</b>します。
+        </p>
+
+        <div class="grid2">
+          <div class="card" style="padding:18px;">
+            <div class="mini" style="border:none; padding:0;">
+              <b>ステップ</b>
+              <span>①公式LINEを追加 → ②店頭で初回登録 → ③その日から受け取りOK</span>
+            </div>
+            <div style="height:10px"></div>
+            <div class="note">
+              ※お渡しは店頭のみ（配送なし）／<b>1日1回・当日分のみ</b>／本人確認ができない場合はお渡しできません
+            </div>
+            <div style="height:14px"></div>
+
+            <a class="btn primary" href="https://lin.ee/RHhUVSO" target="_blank" rel="noopener">公式LINEを追加する</a>
+
+            <div style="height:10px"></div>
+            <div class="note">タップして友だち追加 → 初回は店頭でスタートします。</div>
+          </div>
+
+          <div class="card" style="padding:18px;">
+            <div class="mini" style="border:none; padding:0;">
+              <b>初回に店頭で行うこと（本人確認）</b>
+              <span>
+                ・顔写真登録（会員証のため）<br>
+                ・プラン確定（2,000円 / 3,000円）<br>
+                ・受け取りQRの使い方説明<br>
+                ・カード登録（自動引き落とし）
+              </span>
+            </div>
+            <div style="height:10px"></div>
+            <div class="note">公平で安心な運用のため、<b>契約者ご本人のみ</b>お渡しします。</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="faq">
+      <div class="container">
+        <h2>よくある質問</h2>
+        <p>運用に合わせて文言は調整できます（このままでもOK）。</p>
+
+        <details>
+          <summary>本当に毎日ハナを受け取りに行ってもいいんですか？</summary>
+          <div style="height:10px"></div>
+          <div class="note">
+            はい、ぜひ毎日手にとってください。ハナ活メンバーは「ハナのある日常」をつくるための仕組みです。<b>契約者様のみ1日1回、営業時間内に</b>お受け取りいただけます。
+          </div>
+        </details>
+
+        <details>
+          <summary>受け取りはいつでもできますか？</summary>
+          <div style="height:10px"></div>
+          <div class="note">営業時間内に受け取りできます。混雑する時間帯は受け取り時間を指定する場合があります。</div>
+        </details>
+
+        <details>
+          <summary>取り置きはできますか？</summary>
+          <div style="height:10px"></div>
+          <div class="note">当日分のみ（取り置き不可）です。受け取りは「今日のメニュー」から選べます。</div>
+        </details>
+
+        <details>
+          <summary>受け取り忘れた分は繰り越せますか？</summary>
+          <div style="height:10px"></div>
+          <div class="note">繰り越しはありません。その分、続けやすい仕組みにしています。</div>
+        </details>
+
+        <details>
+          <summary>支払い方法は？</summary>
+          <div style="height:10px"></div>
+          <div class="note">クレジットカード自動引き落とし（毎月自動更新）のみです。現金・振込は対応していません。</div>
+        </details>
+
+        <details>
+          <summary>解約はいつまでに申請すればいいですか？</summary>
+          <div style="height:10px"></div>
+          <div class="note">
+            解約は<b>毎月10日まで</b>に申請してください。10日を過ぎた場合は、<b>翌月分の引き落とし</b>が発生します。
+          </div>
+        </details>
+      </div>
+    </section>
+
+    <section class="section" id="access">
+      <div class="container">
+        <h2>店舗情報</h2>
+        <p>Tokihana 西神中央（かすがプラザ1F｜神戸市西区の花屋）</p>
+
+        <div class="split">
+          <div class="card" style="padding:18px;">
+            <div class="mini" style="border:none; padding:0;"><b>営業時間 / 定休日</b><span>10:00〜19:00 / 水曜定休</span></div>
+
+            <div style="height:10px"></div>
+            <div class="mini" style="border:none; padding:0;">
+              <b>電話</b>
+              <span>
+                <a href="tel:0789625577" style="color:inherit; text-decoration:underline;">078-962-5577</a>
+              </span>
+            </div>
+
+            <div style="height:10px"></div>
+            <div class="mini" style="border:none; padding:0;">
+              <b>Instagram</b>
+              <span>
+                <a href="https://www.instagram.com/toki.hana08.seishin/" target="_blank" rel="noopener"
+                   style="color:inherit; text-decoration:underline;">
+                  @toki.hana08.seishin（最新情報はこちら）
+                </a>
+              </span>
+            </div>
+          </div>
+
+          <div class="mapbox">
+            <iframe title="Tokihana 西神中央" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+              src="https://www.google.com/maps?q=651-2276%20%E5%85%B5%EBA%AB%E7%9C%8C%E7%A5%9E%E6%88%B8%E5%B8%82%E8%A5%BF%E5%8C%BA%E6%98%A5%E6%97%A5%E5%8F%B0%EF%BC%93%E4%B8%81%E7%9B%AE%20%E3%81%8B%E3%81%99%E3%81%8C%E3%83%97%Eラ%ザ%201F&output=embed"></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="container">
+        <div style="display:flex; justify-content:space-between; gap:10px; flex-wrap:wrap;">
+          <div><b>ハナ活メンバー</b>｜日常に花を。</div><div>© Tokihana</div>
+        </div>
+        <div style="height:10px"></div>
+        <div class="note">表示の免責例：内容・提供条件は予告なく変更する場合があります／混雑時は受け取り数量を調整する場合があります／画像はイメージです</div>
+      </div>
+    </footer>
+  </main>
+
+  <script>
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click',(e)=>{
+        const id=a.getAttribute('href'); if(!id||id==='#') return;
+        const el=document.querySelector(id);
+        if(el){ e.preventDefault(); el.scrollIntoView({behavior:'smooth',block:'start'}); }
+      });
+    });
+  </script>
+</body>
+</html>
